@@ -561,6 +561,10 @@ func (err errorWithGraph) Error() string {
 	return err.err.Error()
 }
 
+func (err errorWithGraph) Unwrap() error {
+	return err.err
+}
+
 // VisualizeError returns the visualization of the error if available.
 //
 // Note that VisualizeError does not yet recognize [Decorate] and [Replace].
